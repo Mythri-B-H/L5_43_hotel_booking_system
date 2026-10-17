@@ -17,7 +17,10 @@ def book_room(room_num, guest_name, booking_log=None):
     if booking_log is None:
         booking_log = []
 
-    if room_num not in room_inventory or room_inventory[room_num]["is_booked"]:
+    if (
+        room_num not in room_inventory
+        or room_inventory[room_num]["is_booked"]
+    ):
         return False
 
     room_inventory[room_num]["is_booked"] = True
